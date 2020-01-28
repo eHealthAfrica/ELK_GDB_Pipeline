@@ -1,0 +1,6 @@
+- pipeline.id: settlements
+  path.config: "/usr/share/logstash/pipeline/logstash_settlements.conf"
+  pipeline.workers: 1
+- pipeline.id: health_facility
+  path.config: "/usr/share/logstash/pipeline/logstash_health_facility.conf"
+  pipeline.workers: 1
