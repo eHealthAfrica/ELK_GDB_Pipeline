@@ -31,7 +31,7 @@ services:
       - "5000:5000"
       - "9600:9600"
     environment:
-      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      LS_JAVA_OPTS: "-Xmx1000m -Xms1000m"
       JDBC_STRING: "jdbc:postgresql://gis-new-db.ehealthafrica.org:5432/eha_database_readonly"
       PSQL_USER: "db_user"
       PSQL_PASSWORD: "user1234"

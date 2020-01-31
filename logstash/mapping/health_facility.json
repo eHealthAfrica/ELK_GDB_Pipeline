@@ -1,10 +1,11 @@
-{"template": "health_facility",
+{
+  "template": "hf",
   "order": 1,
   "settings": {
     "number_of_shards": 5
   },
   "mappings": {
-    "health_facility": {
+    "doc": {
       "properties": {
         "@timestamp": {
           "type": "date"
@@ -18,6 +19,9 @@
             }
           }
         },
+        "id": {
+          "type": "long"
+        },
         "global_id": {
           "type": "text",
           "fields": {
@@ -27,37 +31,25 @@
             }
           }
         },
-        "id": {
-          "type": "long"
+        "sa_global_id": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
         },
         "timestamp": {
           "type": "date"
         },
-        "latitude": {
-          "type": "float"
-        },
         "longitude": {
           "type": "float"
         },
-        "source": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
+        "latitude": {
+          "type": "float"
         },
-        "hf_type": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
-        },
-        "hf_name": {
+        "settlement_name": {
           "type": "text",
           "fields": {
             "keyword": {
@@ -69,34 +61,7 @@
         "location": {
           "type": "geo_point"
         },
-        "alternate_name": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
-        },
-        "functional_status": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
-        },
-        "ownership": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
-        },
-        "accessibility": {
+        "source": {
           "type": "text",
           "fields": {
             "keyword": {
