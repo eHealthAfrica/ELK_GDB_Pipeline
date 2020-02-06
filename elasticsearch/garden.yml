@@ -1,0 +1,10 @@
+kind: Module
+description: Opendistro elasticsearch
+type: helm
+name: opendistro-es
+repo: https://ehealthafrica.github.io/helm-charts/
+chart: opendistro-es
+values:
+  kibana:
+    config:
+      elasticsearch.hosts: ["http://gdb-opendistro-es-client-service:9200"]

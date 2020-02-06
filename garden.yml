@@ -1,0 +1,11 @@
+kind: Project
+name: gdb
+environments:
+  - name: dev
+providers:
+  - name: kubernetes
+    environments: [dev]
+    context: dev-gke
+    namespace: gdb
+    defaultHostname: data-dev.eha.im
+    buildMode: cluster-docker
