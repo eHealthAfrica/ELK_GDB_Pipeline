@@ -2,9 +2,31 @@ kind: Module
 description: Opendistro elasticsearch
 type: helm
 name: opendistro-es
+releaseName: opendistro-es-gdb
 repo: https://ehealthafrica.github.io/helm-charts/
 chart: opendistro-es
+version: 1.0.1
 values:
   kibana:
     config:
-      elasticsearch.hosts: ["http://gdb-opendistro-es-client-service:9200"]
+      elasticsearch.hosts: ["http://opendistro-es-gdb-client-service:9200"]
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/acme-challenge-type: dns01
+        cert-manager.io/acme-dns01-provider: route53
+        cert-manager.io/cluster-issuer: letsencrypt
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+        nginx.ingress.kubernetes.io/ssl-redirect: true
+        nginx.ingress.kubernetes.io/enable-cors: true
+      hosts:
+        - data-dev.eha.im
+    replicas: 1
+  elasticsearch:
+    master:
+      replicas: 1
+    client:
+      replicas: 1
+    data:
+      replicas: 1

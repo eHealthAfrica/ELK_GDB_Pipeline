@@ -7,6 +7,8 @@ RUN apk --update add --no-cache tini python py-pip \
 
 COPY entrypoint.sh /
 
+RUN chmod +x /entrypoint.sh
+
 WORKDIR /usr/share/curator
 COPY config ./config
 

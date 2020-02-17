@@ -1,0 +1,12 @@
+kind: Module
+name: curator
+description: ELK extensions
+type: container
+services:
+  - name: curator
+    env:
+      ELASTICSEARCH_HOST: opendistro-es-gdb-client-service
+      CRON: 0 0 * * *
+      CONFIG_FILE: /usr/share/curator/config/curator.yml
+      COMMAND: /usr/share/curator/config/delete_log_files_curator.yml
+      UNIT_COUNT: 2

@@ -1,0 +1,19 @@
+kind: Module
+name: logstash
+description: Logstash
+type: container
+services:
+  - name: logstash
+    ports:
+      - name: http
+        containerPort: 5000
+        servicePort: 5000
+      - name: http2
+        containerPort: 9600
+        servicePort: 9600
+    env:
+      ES_URL: opendistro-es-gdb-client-service:9200
+      LS_JAVA_OPTS: "-Xmx1000m -Xms1000m"
+      JDBC_STRING: "jdbc:postgresql://gis-new-db.ehealthafrica.org:5432/eha_database_readonly"
+      PSQL_USER: "db_user"
+      PSQL_PASSWORD: "user1234"

@@ -1,0 +1,13 @@
+# kind: Module
+# name: logspout
+# description: ELK extensions
+# type: container
+# services:
+#   - name: logspout
+#     env:
+#       ROUTE_URIS: logstash://logstash:5000
+#       LOGSTASH_TAGS: gdb-elk
+#     volumes:
+#       - name: docker
+#         containerPath: /var/run/docker.sock
+#         hostPath: /var/run/docker.sock

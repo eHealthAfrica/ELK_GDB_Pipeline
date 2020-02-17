@@ -1,0 +1,10 @@
+kind: Module
+name: apm-server
+description: ELK extensions
+type: container
+services:
+  - name: apm-server
+    ports:
+      - name: http
+        containerPort: 8200
+        servicePort: 8200

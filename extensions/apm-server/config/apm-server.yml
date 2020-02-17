@@ -3,4 +3,4 @@ apm-server:
 
 output:
   elasticsearch:
-    hosts: http://elasticsearch:9200
+    hosts: http://opendistro-es-gdb-client-service:9200
