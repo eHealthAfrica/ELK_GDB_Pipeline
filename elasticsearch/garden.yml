@@ -21,7 +21,7 @@ values:
         nginx.ingress.kubernetes.io/ssl-redirect: true
         nginx.ingress.kubernetes.io/enable-cors: true
       hosts:
-        - data-dev.eha.im
+        - gdb-dev.ehealthafrica.org
     replicas: 1
   elasticsearch:
     master:
